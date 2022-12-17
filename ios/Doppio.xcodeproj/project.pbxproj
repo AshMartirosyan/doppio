@@ -8,12 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* doppio_mobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* doppio_mobileTests.m */; };
-		0C80B921A6F3F58F76C31292 /* libPods-doppio_mobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-doppio_mobile.a */; };
+		11FC4F8ADBBB4BCAB168864E /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 39DC9E975E3C419DB0443C71 /* Roboto-ThinItalic.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7699B88040F8A987B510C191 /* libPods-doppio_mobile-doppio_mobileTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-doppio_mobile-doppio_mobileTests.a */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		280D9F2A7DC3405682D44EE6 /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72A317488791458BB2BA2699 /* Roboto-LightItalic.ttf */; };
+		42C1C204E97811E7B311F879 /* libPods-Doppio-DoppioTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4BA1BE69A63315E404AF2DA /* libPods-Doppio-DoppioTests.a */; };
+		4C9316453291E69E08E2B030 /* libPods-Doppio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3DAD4A8A4F875EC33D847EA /* libPods-Doppio.a */; };
+		59D89F5851C14588838DC86A /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6EE6A32D85E34431AE41C8ED /* Roboto-Italic.ttf */; };
+		5E9769F26F41426D9AEF1CF9 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C2354F7B38B48529C0F0203 /* Roboto-BlackItalic.ttf */; };
+		6672CB6EA50249F1ADBC529C /* Urbanist-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BFB411F3A874BABBC84489B /* Urbanist-Italic.ttf */; };
+		72F893A75B0E475B90A60C73 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA5C915C2F1648BA8B3D002B /* Roboto-Light.ttf */; };
+		7D2A0FAAA04A413AAFE53878 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FFF4751A754452D9DD8AF0D /* Roboto-Regular.ttf */; };
+		88D440F48E954FC1BB8D2BE5 /* Urbanist.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46ED6E4D5C534E7690BDB590 /* Urbanist.ttf */; };
+		9999B298509449D896AFD866 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D971B014C0B41E6B29D65A1 /* Roboto-Medium.ttf */; };
+		BC13A2515EAF409A9D7BC269 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98D4850B442E4EB8A2DCF19F /* Roboto-Black.ttf */; };
+		C8DEF8300448433F8224C2B8 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF0C2CA3D4A14753A3CFE376 /* Roboto-Bold.ttf */; };
+		D077C6B09CD442A6BEBFBF02 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F39820035034FFAB57C4C85 /* Roboto-MediumItalic.ttf */; };
+		D835CEAD294EFBA8003DC58B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		E7F6F55934484EBF9CE26DA7 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE7E4392C0EE411DBD012C06 /* Roboto-Thin.ttf */; };
+		FD0D482251EE404DB45D54FF /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C5023974BE840548830C75C /* Roboto-BoldItalic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,23 +41,41 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* doppio_mobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = doppio_mobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* DoppioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoppioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* doppio_mobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = doppio_mobileTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* doppio_mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = doppio_mobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* Doppio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doppio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = doppio_mobile/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = doppio_mobile/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = doppio_mobile/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = doppio_mobile/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = doppio_mobile/main.m; sourceTree = "<group>"; };
-		19F6CBCC0A4E27FBF8BF4A61 /* libPods-doppio_mobile-doppio_mobileTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-doppio_mobile-doppio_mobileTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C5023974BE840548830C75C /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-BoldItalic.ttf"; path = "../src/assets/fonts/Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		2FFF4751A754452D9DD8AF0D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Regular.ttf"; path = "../src/assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		39DC9E975E3C419DB0443C71 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-ThinItalic.ttf"; path = "../src/assets/fonts/Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-doppio_mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-doppio_mobile.debug.xcconfig"; path = "Target Support Files/Pods-doppio_mobile/Pods-doppio_mobile.debug.xcconfig"; sourceTree = "<group>"; };
+		3BFB411F3A874BABBC84489B /* Urbanist-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Urbanist-Italic.ttf"; path = "../src/assets/fonts/Urbanist-Italic.ttf"; sourceTree = "<group>"; };
+		46ED6E4D5C534E7690BDB590 /* Urbanist.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Urbanist.ttf; path = ../src/assets/fonts/Urbanist.ttf; sourceTree = "<group>"; };
+		48F77921F7B7682E81F4F910 /* Pods-Doppio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doppio.debug.xcconfig"; path = "Target Support Files/Pods-Doppio/Pods-Doppio.debug.xcconfig"; sourceTree = "<group>"; };
+		4C2354F7B38B48529C0F0203 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-BlackItalic.ttf"; path = "../src/assets/fonts/Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-doppio_mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-doppio_mobile.release.xcconfig"; path = "Target Support Files/Pods-doppio_mobile/Pods-doppio_mobile.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-doppio_mobile-doppio_mobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-doppio_mobile-doppio_mobileTests.debug.xcconfig"; path = "Target Support Files/Pods-doppio_mobile-doppio_mobileTests/Pods-doppio_mobile-doppio_mobileTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-doppio_mobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-doppio_mobile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EE6A32D85E34431AE41C8ED /* Roboto-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Italic.ttf"; path = "../src/assets/fonts/Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		72A317488791458BB2BA2699 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-LightItalic.ttf"; path = "../src/assets/fonts/Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		7F39820035034FFAB57C4C85 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-MediumItalic.ttf"; path = "../src/assets/fonts/Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = doppio_mobile/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-doppio_mobile-doppio_mobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-doppio_mobile-doppio_mobileTests.release.xcconfig"; path = "Target Support Files/Pods-doppio_mobile-doppio_mobileTests/Pods-doppio_mobile-doppio_mobileTests.release.xcconfig"; sourceTree = "<group>"; };
+		98D4850B442E4EB8A2DCF19F /* Roboto-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Black.ttf"; path = "../src/assets/fonts/Roboto-Black.ttf"; sourceTree = "<group>"; };
+		9D971B014C0B41E6B29D65A1 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Medium.ttf"; path = "../src/assets/fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		C01F2063DA3D1EBF8E816621 /* Pods-Doppio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doppio.release.xcconfig"; path = "Target Support Files/Pods-Doppio/Pods-Doppio.release.xcconfig"; sourceTree = "<group>"; };
+		C4BA1BE69A63315E404AF2DA /* libPods-Doppio-DoppioTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Doppio-DoppioTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9EDEEAE61C3D39307CBB824 /* Pods-Doppio-DoppioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doppio-DoppioTests.release.xcconfig"; path = "Target Support Files/Pods-Doppio-DoppioTests/Pods-Doppio-DoppioTests.release.xcconfig"; sourceTree = "<group>"; };
+		CE7E4392C0EE411DBD012C06 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Thin.ttf"; path = "../src/assets/fonts/Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		E2994BA3B65C88693025C142 /* Pods-Doppio-DoppioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doppio-DoppioTests.debug.xcconfig"; path = "Target Support Files/Pods-Doppio-DoppioTests/Pods-Doppio-DoppioTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		EF0C2CA3D4A14753A3CFE376 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Bold.ttf"; path = "../src/assets/fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		F3DAD4A8A4F875EC33D847EA /* libPods-Doppio.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Doppio.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA5C915C2F1648BA8B3D002B /* Roboto-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Light.ttf"; path = "../src/assets/fonts/Roboto-Light.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7699B88040F8A987B510C191 /* libPods-doppio_mobile-doppio_mobileTests.a in Frameworks */,
+				42C1C204E97811E7B311F879 /* libPods-Doppio-DoppioTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-doppio_mobile.a in Frameworks */,
+				4C9316453291E69E08E2B030 /* libPods-Doppio.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,8 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-doppio_mobile.a */,
-				19F6CBCC0A4E27FBF8BF4A61 /* libPods-doppio_mobile-doppio_mobileTests.a */,
+				F3DAD4A8A4F875EC33D847EA /* libPods-Doppio.a */,
+				C4BA1BE69A63315E404AF2DA /* libPods-Doppio-DoppioTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -122,6 +154,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				F72345EA7BA4494DA914D20E /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -131,8 +164,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* doppio_mobile.app */,
-				00E356EE1AD99517003FC87E /* doppio_mobileTests.xctest */,
+				13B07F961A680F5B00A75B9A /* Doppio.app */,
+				00E356EE1AD99517003FC87E /* DoppioTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,16 +177,41 @@
 				5709B34CF0A7D63546082F79 /* Pods-doppio_mobile.release.xcconfig */,
 				5B7EB9410499542E8C5724F5 /* Pods-doppio_mobile-doppio_mobileTests.debug.xcconfig */,
 				89C6BE57DB24E9ADA2F236DE /* Pods-doppio_mobile-doppio_mobileTests.release.xcconfig */,
+				48F77921F7B7682E81F4F910 /* Pods-Doppio.debug.xcconfig */,
+				C01F2063DA3D1EBF8E816621 /* Pods-Doppio.release.xcconfig */,
+				E2994BA3B65C88693025C142 /* Pods-Doppio-DoppioTests.debug.xcconfig */,
+				C9EDEEAE61C3D39307CBB824 /* Pods-Doppio-DoppioTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F72345EA7BA4494DA914D20E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				98D4850B442E4EB8A2DCF19F /* Roboto-Black.ttf */,
+				4C2354F7B38B48529C0F0203 /* Roboto-BlackItalic.ttf */,
+				EF0C2CA3D4A14753A3CFE376 /* Roboto-Bold.ttf */,
+				1C5023974BE840548830C75C /* Roboto-BoldItalic.ttf */,
+				6EE6A32D85E34431AE41C8ED /* Roboto-Italic.ttf */,
+				FA5C915C2F1648BA8B3D002B /* Roboto-Light.ttf */,
+				72A317488791458BB2BA2699 /* Roboto-LightItalic.ttf */,
+				9D971B014C0B41E6B29D65A1 /* Roboto-Medium.ttf */,
+				7F39820035034FFAB57C4C85 /* Roboto-MediumItalic.ttf */,
+				2FFF4751A754452D9DD8AF0D /* Roboto-Regular.ttf */,
+				CE7E4392C0EE411DBD012C06 /* Roboto-Thin.ttf */,
+				39DC9E975E3C419DB0443C71 /* Roboto-ThinItalic.ttf */,
+				3BFB411F3A874BABBC84489B /* Urbanist-Italic.ttf */,
+				46ED6E4D5C534E7690BDB590 /* Urbanist.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* doppio_mobileTests */ = {
+		00E356ED1AD99517003FC87E /* DoppioTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "doppio_mobileTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "DoppioTests" */;
 			buildPhases = (
 				A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -167,14 +225,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = doppio_mobileTests;
+			name = DoppioTests;
 			productName = doppio_mobileTests;
-			productReference = 00E356EE1AD99517003FC87E /* doppio_mobileTests.xctest */;
+			productReference = 00E356EE1AD99517003FC87E /* DoppioTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* doppio_mobile */ = {
+		13B07F861A680F5B00A75B9A /* Doppio */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "doppio_mobile" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Doppio" */;
 			buildPhases = (
 				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -189,9 +247,9 @@
 			);
 			dependencies = (
 			);
-			name = doppio_mobile;
+			name = Doppio;
 			productName = doppio_mobile;
-			productReference = 13B07F961A680F5B00A75B9A /* doppio_mobile.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* Doppio.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -211,7 +269,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "doppio_mobile" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Doppio" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -224,8 +282,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* doppio_mobile */,
-				00E356ED1AD99517003FC87E /* doppio_mobileTests */,
+				13B07F861A680F5B00A75B9A /* Doppio */,
+				00E356ED1AD99517003FC87E /* DoppioTests */,
 			);
 		};
 /* End PBXProject section */
@@ -242,8 +300,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				BC13A2515EAF409A9D7BC269 /* Roboto-Black.ttf in Resources */,
+				5E9769F26F41426D9AEF1CF9 /* Roboto-BlackItalic.ttf in Resources */,
+				C8DEF8300448433F8224C2B8 /* Roboto-Bold.ttf in Resources */,
+				FD0D482251EE404DB45D54FF /* Roboto-BoldItalic.ttf in Resources */,
+				59D89F5851C14588838DC86A /* Roboto-Italic.ttf in Resources */,
+				72F893A75B0E475B90A60C73 /* Roboto-Light.ttf in Resources */,
+				280D9F2A7DC3405682D44EE6 /* Roboto-LightItalic.ttf in Resources */,
+				9999B298509449D896AFD866 /* Roboto-Medium.ttf in Resources */,
+				D835CEAD294EFBA8003DC58B /* LaunchScreen.storyboard in Resources */,
+				D077C6B09CD442A6BEBFBF02 /* Roboto-MediumItalic.ttf in Resources */,
+				7D2A0FAAA04A413AAFE53878 /* Roboto-Regular.ttf in Resources */,
+				E7F6F55934484EBF9CE26DA7 /* Roboto-Thin.ttf in Resources */,
+				11FC4F8ADBBB4BCAB168864E /* Roboto-ThinItalic.ttf in Resources */,
+				6672CB6EA50249F1ADBC529C /* Urbanist-Italic.ttf in Resources */,
+				88D440F48E954FC1BB8D2BE5 /* Urbanist.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,7 +324,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -272,15 +344,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-doppio_mobile/Pods-doppio_mobile-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Doppio/Pods-Doppio-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-doppio_mobile/Pods-doppio_mobile-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Doppio/Pods-Doppio-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-doppio_mobile/Pods-doppio_mobile-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Doppio/Pods-Doppio-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
@@ -298,7 +370,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-doppio_mobile-doppio_mobileTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Doppio-DoppioTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -320,7 +392,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-doppio_mobile-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Doppio-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -333,15 +405,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-doppio_mobile-doppio_mobileTests/Pods-doppio_mobile-doppio_mobileTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Doppio-DoppioTests/Pods-Doppio-DoppioTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-doppio_mobile-doppio_mobileTests/Pods-doppio_mobile-doppio_mobileTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Doppio-DoppioTests/Pods-Doppio-DoppioTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-doppio_mobile-doppio_mobileTests/Pods-doppio_mobile-doppio_mobileTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Doppio-DoppioTests/Pods-Doppio-DoppioTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
@@ -350,15 +422,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-doppio_mobile/Pods-doppio_mobile-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Doppio/Pods-Doppio-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-doppio_mobile/Pods-doppio_mobile-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Doppio/Pods-Doppio-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-doppio_mobile/Pods-doppio_mobile-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Doppio/Pods-Doppio-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
@@ -367,15 +439,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-doppio_mobile-doppio_mobileTests/Pods-doppio_mobile-doppio_mobileTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Doppio-DoppioTests/Pods-Doppio-DoppioTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-doppio_mobile-doppio_mobileTests/Pods-doppio_mobile-doppio_mobileTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Doppio-DoppioTests/Pods-Doppio-DoppioTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-doppio_mobile-doppio_mobileTests/Pods-doppio_mobile-doppio_mobileTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Doppio-DoppioTests/Pods-Doppio-DoppioTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -422,7 +494,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* doppio_mobile */;
+			target = 13B07F861A680F5B00A75B9A /* Doppio */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -430,7 +502,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-doppio_mobile-doppio_mobileTests.debug.xcconfig */;
+			baseConfigurationReference = E2994BA3B65C88693025C142 /* Pods-Doppio-DoppioTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -451,13 +523,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/doppio_mobile.app/doppio_mobile";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Doppio.app/Doppio";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-doppio_mobile-doppio_mobileTests.release.xcconfig */;
+			baseConfigurationReference = C9EDEEAE61C3D39307CBB824 /* Pods-Doppio-DoppioTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -475,30 +547,35 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/doppio_mobile.app/doppio_mobile";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Doppio.app/Doppio";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-doppio_mobile.debug.xcconfig */;
+			baseConfigurationReference = 48F77921F7B7682E81F4F910 /* Pods-Doppio.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q58575V677;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = doppio_mobile/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Doppio;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.0.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = doppio_mobile;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.doppio-app.app";
+				PRODUCT_NAME = Doppio;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -507,23 +584,28 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-doppio_mobile.release.xcconfig */;
+			baseConfigurationReference = C01F2063DA3D1EBF8E816621 /* Pods-Doppio.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q58575V677;
 				INFOPLIST_FILE = doppio_mobile/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Doppio;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.0.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = doppio_mobile;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.doppio-app.app";
+				PRODUCT_NAME = Doppio;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -669,7 +751,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "doppio_mobileTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "DoppioTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -678,7 +760,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "doppio_mobile" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Doppio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -687,7 +769,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "doppio_mobile" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Doppio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

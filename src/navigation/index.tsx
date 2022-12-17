@@ -1,5 +1,6 @@
 import React, {useMemo} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
+import {AuthNavigator} from './AuthNavigator';
 
 export const AppNavigation = () => {
   //   const isLoggedId = useAppSelector(getIsLoggedIn);
@@ -12,8 +13,7 @@ export const AppNavigation = () => {
     //   }
     //   return <MainNavigation />;
     // }
-    // return <AuthNavigator />;
-    return <></>;
+    return <AuthNavigator />;
   }, []);
 
   return <NavigationContainer>{Children}</NavigationContainer>;

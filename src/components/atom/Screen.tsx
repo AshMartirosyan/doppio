@@ -11,13 +11,13 @@ import {Edge, SafeAreaView} from 'react-native-safe-area-context';
 interface Props {
   children?: ReactNode;
   edges?: Edge[];
-  rootStyle?: StyleProp<ViewStyle>;
+  style?: StyleProp<ViewStyle>;
   barStyle?: StatusBarStyle;
 }
 
-const Screen: FC<Props> = ({edges, rootStyle, barStyle, children}) => {
+const ScreenComponent: FC<Props> = ({edges, style, barStyle, children}) => {
   return (
-    <SafeAreaView edges={edges} style={[styles.base, rootStyle]}>
+    <SafeAreaView edges={edges} style={[styles.base, style]}>
       <StatusBar barStyle={barStyle || 'dark-content'} />
       {children}
     </SafeAreaView>
@@ -28,4 +28,4 @@ const styles = StyleSheet.create({
   base: {flex: 1},
 });
 
-export default memo(Screen);
+export default memo(ScreenComponent);
