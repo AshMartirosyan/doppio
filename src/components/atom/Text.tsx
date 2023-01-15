@@ -1,6 +1,6 @@
-import React, {FC, memo} from 'react';
-import {Text, TextProps} from 'react-native';
-import {moderateScale} from '../../util/scale';
+import React, { FC, memo } from 'react';
+import { Text, TextProps } from 'react-native';
+import { moderateScale } from '../../util/scale';
 
 export interface ITextProps {
   fontSize?: number;
@@ -15,12 +15,7 @@ const TextComponent: FC<ITextProps & TextProps> = ({
   ...rest
 }) => {
   return (
-    <Text
-      style={[
-        {fontSize: moderateScale(fontSize), fontFamily: fontFamily},
-        style,
-      ]}
-      {...rest}>
+    <Text style={[{ fontSize: moderateScale(fontSize), fontFamily: fontFamily }, style]} {...rest}>
       {children}
     </Text>
   );

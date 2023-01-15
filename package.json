@@ -12,9 +12,12 @@
   "dependencies": {
     "@invertase/react-native-apple-authentication": "^2.2.2",
     "@react-native-async-storage/async-storage": "^1.17.11",
-    "@react-native-google-signin/google-signin": "^9.0.0",
+    "@react-native-clipboard/clipboard": "^1.11.1",
+    "@react-native-google-signin/google-signin": "^9.0.2",
+    "@react-navigation/bottom-tabs": "^6.5.3",
     "@react-navigation/native": "^6.0.16",
     "@react-navigation/native-stack": "^6.9.4",
+    "@reduxjs/toolkit": "^1.9.1",
     "@types/styled-components": "^5.1.26",
     "@types/styled-components-react-native": "^5.2.0",
     "axios": "^1.2.0",
@@ -29,6 +32,8 @@
     "react-native-screens": "^3.18.2",
     "react-native-splash-screen": "^3.3.0",
     "react-native-svg": "^13.6.0",
+    "react-redux": "^8.0.5",
+    "redux-persist": "^6.0.0",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {

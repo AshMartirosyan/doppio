@@ -1,159 +1,95 @@
-import React, {useCallback} from 'react';
-import {ScrollView, StyleSheet, View} from 'react-native';
-import {Controller, SubmitHandler, useForm} from 'react-hook-form';
-import styled from 'styled-components';
-import CoffeeShopIcon from '../../assets/icons/CoffeeShop.svg';
-import GoogleIcon from '../../assets/icons/Google.svg';
-import {PressableText, Screen, Text, TextInput} from '../../components/atom';
-import {Button, IconButton} from '../../components/atom';
+import React, { FC, useCallback } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { Controller, SubmitHandler, useForm } from 'react-hook-form';
+import { TextInput } from '../../components/atom';
+import { AuthScreen } from '../../components/organism';
 import colors from '../../constants/colors';
-import {EMAIL_REG_EXP, TextHelper} from '../../constants/texts';
-import {ILogInFormData} from '../../models/auth';
-import {horizontalScale, verticalScale} from '../../util/scale';
+import { EMAIL_REG_EXP } from '../../constants/validation';
+import { useTranslation } from '../../context/TranslationProvider';
+import { ILoginFormData } from '../../models/auth';
+import { AuthStackParams } from '../../navigation/AuthNavigator';
+import { MainStackParams } from '../../navigation/MainNavigation';
+import { useAppDispatch } from '../../store';
+import { setIsLoggedIn } from '../../store/auth/slice';
+import { verticalScale } from '../../util/scale';
+import { ErrorText } from './styles';
 
-const Base = styled(Screen)`
-  padding-vertical: ${verticalScale(12)}px;
-  padding-horizontal: ${horizontalScale(16)}px;
-  background-color: ${colors.background1};
-`;
+interface Props {
+  navigation: NativeStackNavigationProp<AuthStackParams, 'Login'>;
+}
 
-const ErrorText = styled(Text)`
-  color: ${colors.errorRed};
-  font-weight: 300;
-  padding-bottom: ${verticalScale(13)}px;
-  text-align: center;
-  align-self: flex-start;
-  min-height: ${verticalScale(32)}px;
-`;
-
-const ForgotPassword = styled(PressableText)`
-  padding-top: ${verticalScale(19)}px;
-  padding-bottom: ${verticalScale(28)}px;
-  align-self: flex-end;
-`;
-
-const Divider = styled(View)`
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-const Line = styled(View)`
-  flex: 1;
-  height: ${verticalScale(1)}px;
-  background-color: ${colors.textBlack};
-  opacity: 0.8;
-`;
-const DividerText = styled(Text)`
-  padding-horizontal: ${horizontalScale(7)}px;
-`;
-
-const IconContainer = styled(View)`
-  flex-direction: row;
-  padding-top: ${verticalScale(20)}px;
-  padding-bottom: ${verticalScale(30)}px;
-  align-items: center;
-  justify-content: center;
-`;
-
-const SubmitButton = styled(Button)`
-  width: 100%;
-`;
-
-const BottomNavLink = styled(PressableText)`
-  padding-top: ${verticalScale(16)}px;
-`;
-
-const NavLinkSecondPart = styled(Text)`
-  font-weight: 300;
-  color: ${colors.textBlack};
-`;
-
-export const Login = () => {
+export const Login: FC<Props> = ({ navigation }) => {
+  const dispatch = useAppDispatch();
+  const { navigate } = useNavigation<NativeStackNavigationProp<MainStackParams, 'Auth'>>();
+  const { t } = useTranslation();
   const {
     control,
     handleSubmit,
-    formState: {errors},
-  } = useForm<ILogInFormData>();
+    formState: { errors },
+    getValues,
+  } = useForm<ILoginFormData>();
 
-  const onForgot = useCallback(() => {}, []);
-  const onSignUp = useCallback(() => {}, []);
-  const onSubmit: SubmitHandler<ILogInFormData> = useCallback(() => {}, []);
+  const onForgot = useCallback(
+    () => navigation.navigate('ForgotPassword', { email: getValues().email }),
+    [getValues, navigation],
+  );
+  const onSignUp = useCallback(() => navigation.navigate('SignUp'), [navigation]);
+  const onSubmit: SubmitHandler<ILoginFormData> = useCallback(() => {
+    dispatch(setIsLoggedIn());
+    navigate('Tab', { screen: 'Home' });
+  }, [dispatch, navigate]);
 
   return (
-    <Base edges={['left', 'right', 'top', 'bottom']}>
-      <ScrollView contentContainerStyle={styles.list}>
-        <ErrorText fontSize={16}>
-          {errors.username?.message || errors.password?.message}
-        </ErrorText>
-        <Controller
-          name="username"
-          control={control}
-          rules={{
-            required: 'This field is required',
-            pattern: {
-              value: EMAIL_REG_EXP,
-              message: TextHelper.EMAIL_ERROR_TEXT,
-            },
-          }}
-          render={({field: {onChange, value}}) => (
-            <TextInput
-              placeholder="email"
-              keyboardType="email-address"
-              onChangeText={onChange}
-              value={value}
-              hasError={!!errors.username?.message}
-            />
-          )}
-        />
-        <Controller
-          name="password"
-          control={control}
-          rules={{
-            required: 'This field is required',
-          }}
-          render={({field: {onChange, value}}) => (
-            <TextInput
-              wrapperStyle={{marginTop: verticalScale(12)}}
-              placeholder="password"
-              onChangeText={onChange}
-              value={value}
-              secureTextEntry={true}
-              hasError={!!errors.password?.message}
-            />
-          )}
-        />
-        <ForgotPassword onPress={onForgot}>forgot password?</ForgotPassword>
-        <Divider>
-          <Line />
-          <DividerText fontSize={17}>or</DividerText>
-          <Line />
-        </Divider>
-        <IconContainer>
-          <IconButton icon={<GoogleIcon />} />
-        </IconContainer>
-        <CoffeeShopIcon />
-        <SubmitButton text="login" onPress={handleSubmit(onSubmit)} />
-        <BottomNavLink
-          textStyle={styles.navLinkText}
-          fontSize={14}
-          onPress={onSignUp}>
-          don’t have an account?{' '}
-          <NavLinkSecondPart fontSize={14} fontFamily="Roboto">
-            sign up for free
-          </NavLinkSecondPart>
-        </BottomNavLink>
-      </ScrollView>
-    </Base>
+    <AuthScreen
+      backgroundColor={colors.backgroundAuth}
+      topNavLink={{ title: t('auth.forgotPasswordLink'), onPress: onForgot }}
+      submitTitle={t('auth.login')}
+      onSubmit={handleSubmit(onSubmit)}
+      bottomNavLink={{
+        title: t('auth.loginBottomLink1'),
+        title2: t('auth.loginBottomLink2'),
+        onPress: onSignUp,
+      }}
+      isTryAgain={false}>
+      <ErrorText fontSize={16}>{errors.email?.message || errors.password?.message}</ErrorText>
+      <Controller
+        name="email"
+        control={control}
+        rules={{
+          required: t('common.requiredMessage'),
+          pattern: {
+            value: EMAIL_REG_EXP,
+            message: t('auth.emailErrorMessage'),
+          },
+        }}
+        render={({ field: { onChange, value } }) => (
+          <TextInput
+            placeholder={t('common.email')}
+            keyboardType="email-address"
+            onChangeText={onChange}
+            value={value}
+            hasError={!!errors.email?.message}
+          />
+        )}
+      />
+      <Controller
+        name="password"
+        control={control}
+        rules={{
+          required: t('common.requiredMessage'),
+        }}
+        render={({ field: { onChange, value } }) => (
+          <TextInput
+            wrapperStyle={{ marginTop: verticalScale(12) }}
+            placeholder={t('common.password')}
+            onChangeText={onChange}
+            value={value}
+            secureTextEntry={true}
+            hasError={!!errors.password?.message}
+          />
+        )}
+      />
+    </AuthScreen>
   );
 };
-
-const styles = StyleSheet.create({
-  list: {
-    alignItems: 'center',
-  },
-  navLinkText: {
-    fontWeight: '300',
-    color: 'rgb(17, 17, 17,0.6)',
-  },
-});

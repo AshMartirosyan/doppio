@@ -6,16 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/splash_screen_background"
     android:gravity="center">
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
-        android:adjustViewBounds="true"
-        android:maxWidth="250dp"
-        android:maxHeight="80dp"
-        android:scaleType="fitCenter"
-        android:src="@mipmap/applogo"
-        />
 </RelativeLayout>
 
 

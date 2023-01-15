@@ -3,44 +3,39 @@ import {
   createNativeStackNavigator,
   NativeStackNavigationProp,
 } from '@react-navigation/native-stack';
-import {ForgotPassword} from '../screens/auth/ForgotPassword';
-import {Login} from '../screens/auth/Login';
-import {SignUp} from '../screens/auth/Signup';
-import {VerificationCode} from '../screens/auth/VerificationCode';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Header } from '../components/atom';
+import { ForgotPassword, Login, ResetPassword, SignUp, VerificationCode } from '../screens';
 
 export type AuthStackParams = {
   Login: undefined;
-  ForgotPassword: undefined;
+  ForgotPassword: { email?: string };
   VerificationCode: undefined;
-  CreateNewPassword: undefined;
+  ResetPassword: undefined;
   SignUp: undefined;
 };
 
-const {Navigator, Screen} = createNativeStackNavigator<AuthStackParams>();
+const { Navigator, Screen } = createNativeStackNavigator<AuthStackParams>();
 
-export type AuthNavigatorProp = NativeStackNavigationProp<
-  AuthStackParams,
-  'Login'
->;
+export type AuthNavigatorProp = NativeStackNavigationProp<AuthStackParams, 'Login'>;
 
 export const AuthNavigator = () => {
-  //   const onForgotPasswordEnd = useCallback((navigation: AuthNavigatorProp) => {
-  //     navigation.navigate('Login');
-  //   }, []);
+  const insets = useSafeAreaInsets();
 
   return (
     <Navigator
       initialRouteName="Login"
       screenOptions={{
-        headerShown: false,
-        // header: ({navigation}) => <Header onBack={() => navigation.goBack()} />,
+        header: ({ navigation }) => (
+          <Header onBack={() => navigation.goBack()} style={{ marginTop: insets.top }} />
+        ),
+        headerTransparent: true,
       }}>
-      <Screen name="Login" component={Login} />
-      <Screen name="ForgotPassword" component={ForgotPassword} />
+      <Screen name="Login" component={Login} options={{ headerShown: false }} />
+      <Screen name="ForgotPassword" component={ForgotPassword} options={{ headerShown: false }} />
       <Screen name="VerificationCode" component={VerificationCode} />
-
-      {/* Registration */}
-      <Screen name="SignUp" component={SignUp} />
+      <Screen name="ResetPassword" component={ResetPassword} />
+      <Screen name="SignUp" component={SignUp} options={{ headerShown: false }} />
     </Navigator>
   );
 };

@@ -1,12 +1,6 @@
-import React, {FC, memo, ReactNode} from 'react';
-import {
-  StatusBar,
-  StatusBarStyle,
-  StyleProp,
-  StyleSheet,
-  ViewStyle,
-} from 'react-native';
-import {Edge, SafeAreaView} from 'react-native-safe-area-context';
+import React, { FC, memo, ReactNode } from 'react';
+import { StatusBar, StatusBarStyle, StyleProp, StyleSheet, ViewStyle } from 'react-native';
+import { Edge, SafeAreaView } from 'react-native-safe-area-context';
 
 interface Props {
   children?: ReactNode;
@@ -15,7 +9,7 @@ interface Props {
   barStyle?: StatusBarStyle;
 }
 
-const ScreenComponent: FC<Props> = ({edges, style, barStyle, children}) => {
+const ScreenComponent: FC<Props> = ({ edges, style, barStyle, children }) => {
   return (
     <SafeAreaView edges={edges} style={[styles.base, style]}>
       <StatusBar barStyle={barStyle || 'dark-content'} />
@@ -25,7 +19,7 @@ const ScreenComponent: FC<Props> = ({edges, style, barStyle, children}) => {
 };
 
 const styles = StyleSheet.create({
-  base: {flex: 1},
+  base: { flex: 1 },
 });
 
 export default memo(ScreenComponent);

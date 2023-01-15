@@ -1,13 +1,13 @@
-import {WINDOW_HEIGHT, WINDOW_WIDTH} from '../constants/sizes';
+import { Dimensions } from 'react-native';
 
 const guidelineBaseWidth = 360;
 const guidelineBaseHeight = 640;
 
 const horizontalScale = (size: number) =>
-  (WINDOW_WIDTH / guidelineBaseWidth) * size;
+  (Dimensions.get('screen').width / guidelineBaseWidth) * size;
 const verticalScale = (size: number) =>
-  (WINDOW_HEIGHT / guidelineBaseHeight) * size;
+  (Dimensions.get('screen').height / guidelineBaseHeight) * size;
 const moderateScale = (size: number, factor = 0.5) =>
   size + (horizontalScale(size) - size) * factor;
 
-export {horizontalScale, verticalScale, moderateScale};
+export { horizontalScale, verticalScale, moderateScale };

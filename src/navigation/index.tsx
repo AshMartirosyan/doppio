@@ -1,20 +1,12 @@
-import React, {useMemo} from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {AuthNavigator} from './AuthNavigator';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { MainNavigator } from './MainNavigation';
+import { navigationRef } from './navigationHelper';
 
 export const AppNavigation = () => {
-  //   const isLoggedId = useAppSelector(getIsLoggedIn);
-  //   const isFirstTime = useAppSelector(getIsFirstTime);
-
-  const Children = useMemo(() => {
-    // if (isLoggedId) {
-    //   if (isFirstTime) {
-    //     return <CompleatProfileNavigator />;
-    //   }
-    //   return <MainNavigation />;
-    // }
-    return <AuthNavigator />;
-  }, []);
-
-  return <NavigationContainer>{Children}</NavigationContainer>;
+  return (
+    <NavigationContainer ref={navigationRef}>
+      <MainNavigator />
+    </NavigationContainer>
+  );
 };

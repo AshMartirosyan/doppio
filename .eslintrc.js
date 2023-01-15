@@ -7,6 +7,7 @@ module.exports = {
     {
       files: ['*.ts', '*.tsx', '*.js'],
       rules: {
+        'react-native/no-inline-styles': 'off',
         '@typescript-eslint/no-unused-vars': 'off',
         '@typescript-eslint/no-shadow': ['error'],
         'unused-imports/no-unused-imports': 'error',
@@ -22,19 +23,11 @@ module.exports = {
         'no-shadow': 'off',
         'no-undef': 'off',
         'import/no-cycle': 'error',
-        'sort-imports': [
-          'error',
-          {ignoreCase: true, ignoreDeclarationSort: true},
-        ],
+        'sort-imports': ['error', { ignoreCase: true, ignoreDeclarationSort: true }],
         'import/order': [
           'error',
           {
-            groups: [
-              ['external', 'builtin'],
-              'internal',
-              ['sibling', 'parent'],
-              'index',
-            ],
+            groups: [['external', 'builtin'], 'internal', ['sibling', 'parent'], 'index'],
             pathGroups: [
               {
                 pattern: '@(react|react-native)',
