@@ -1,4 +1,5 @@
 import Button from './Button';
+import Checkbox from './Checkbox';
 import Header from './Header';
 import IconButton from './IconButton';
 import OtpInput from './OtpInput';
@@ -8,4 +9,15 @@ import TabIcon from './TabIcon';
 import Text from './Text';
 import TextInput from './TextInput';
 
-export { Screen, Text, TextInput, PressableText, Button, IconButton, OtpInput, Header, TabIcon };
+export {
+  Screen,
+  Text,
+  TextInput,
+  PressableText,
+  Button,
+  IconButton,
+  OtpInput,
+  Header,
+  TabIcon,
+  Checkbox,
+};

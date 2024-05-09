@@ -1,6 +1,10 @@
-import React, { FC, useCallback, useMemo } from 'react';
+import React, { FC, useCallback } from 'react';
+import { Platform } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { Controller, useForm } from 'react-hook-form';
+import { Controller, SubmitHandler, useForm } from 'react-hook-form';
+import { ErrorText } from './styles';
+import { useSignUpMutation } from '../../api/query/auth';
+import { UserProfileDeviceTypeEnum } from '../../api/query/types';
 import { TextInput } from '../../components/atom';
 import { AuthScreen } from '../../components/organism';
 import colors from '../../constants/colors';
@@ -9,7 +13,6 @@ import { useTranslation } from '../../context/TranslationProvider';
 import { IAuthFormData } from '../../models/auth';
 import { AuthStackParams } from '../../navigation/AuthNavigator';
 import { verticalScale } from '../../util/scale';
-import { ErrorText } from './styles';
 
 interface Props {
   navigation: NativeStackNavigationProp<AuthStackParams, 'SignUp'>;
@@ -20,15 +23,32 @@ export const SignUp: FC<Props> = ({ navigation }) => {
   const {
     control,
     handleSubmit,
+    setError,
     formState: { errors },
   } = useForm<IAuthFormData>();
 
-  const onLogin = useCallback(() => navigation.navigate('Login'), [navigation]);
-  const onSubmit = useCallback(() => {}, []);
+  const { mutate } = useSignUpMutation({
+    onSuccess: async (_, vars) => {
+      navigation.push('VerificationCode', { from: 'SignUp', email: vars.args.email });
+    },
+    onError: (err: any) => {
+      setError(err.includes('email') ? 'email' : 'password', { message: err });
+    },
+  });
 
-  const errorMessage = useMemo(
-    () => errors.username?.message || errors.email?.message || errors.password?.message,
-    [errors],
+  const onLogin = useCallback(() => navigation.navigate('Login'), [navigation]);
+  const onSubmit: SubmitHandler<IAuthFormData> = useCallback(
+    data => {
+      const deviceType =
+        Platform.OS === 'ios' ? UserProfileDeviceTypeEnum.Ios : UserProfileDeviceTypeEnum.Android;
+      mutate({
+        args: {
+          ...data,
+          deviceType,
+        },
+      });
+    },
+    [mutate],
   );
 
   return (
@@ -43,24 +63,7 @@ export const SignUp: FC<Props> = ({ navigation }) => {
       }}
       hasAlternativeMethod={false}
       isTryAgain={false}>
-      <ErrorText fontSize={16}>{errorMessage}</ErrorText>
-      <Controller
-        name="username"
-        control={control}
-        rules={{
-          required: t('common.requiredMessage'),
-          minLength: { value: 4, message: t('auth.usernameErrorMessage') },
-        }}
-        render={({ field: { onChange, value } }) => (
-          <TextInput
-            placeholder={t('common.username')}
-            keyboardType="numbers-and-punctuation"
-            onChangeText={onChange}
-            value={value}
-            hasError={!!errors.email?.message}
-          />
-        )}
-      />
+      <ErrorText fontSize={16}>{errors.email?.message || errors.password?.message}</ErrorText>
       <Controller
         name="email"
         control={control}
@@ -73,7 +76,6 @@ export const SignUp: FC<Props> = ({ navigation }) => {
         }}
         render={({ field: { onChange, value } }) => (
           <TextInput
-            wrapperStyle={{ marginTop: verticalScale(12) }}
             placeholder={t('common.email')}
             keyboardType="email-address"
             onChangeText={onChange}

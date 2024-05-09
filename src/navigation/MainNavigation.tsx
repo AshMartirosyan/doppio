@@ -2,10 +2,10 @@ import React from 'react';
 import { NavigatorScreenParams } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Header } from '../components/atom';
-import { BeverageInfo } from '../screens/BeverageInfo';
 import { AuthNavigator, AuthStackParams } from './AuthNavigator';
 import { MainTabParams, TabNavigation } from './TabNavigation';
+import { Header } from '../components/atom';
+import { BeverageInfo } from '../screens/BeverageInfo';
 
 export type MainStackParams = {
   Tab: NavigatorScreenParams<MainTabParams>;
@@ -31,7 +31,7 @@ export const MainNavigator = () => {
       <Screen
         name="Auth"
         component={AuthNavigator}
-        options={{ headerShown: false, presentation: 'formSheet' }}
+        options={{ headerShown: false, presentation: 'modal' }}
       />
       <Screen name="BeverageInfo" component={BeverageInfo} />
     </Navigator>

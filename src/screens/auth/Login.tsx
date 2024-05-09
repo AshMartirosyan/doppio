@@ -2,7 +2,10 @@ import React, { FC, useCallback } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
-import { TextInput } from '../../components/atom';
+import styled from 'styled-components';
+import { ErrorText } from './styles';
+import { useLoginMutation } from '../../api/query/auth';
+import { Checkbox, Text, TextInput } from '../../components/atom';
 import { AuthScreen } from '../../components/organism';
 import colors from '../../constants/colors';
 import { EMAIL_REG_EXP } from '../../constants/validation';
@@ -11,13 +14,17 @@ import { ILoginFormData } from '../../models/auth';
 import { AuthStackParams } from '../../navigation/AuthNavigator';
 import { MainStackParams } from '../../navigation/MainNavigation';
 import { useAppDispatch } from '../../store';
-import { setIsLoggedIn } from '../../store/auth/slice';
+import { setIsLoggedIn, setToken, setUser } from '../../store/auth/slice';
 import { verticalScale } from '../../util/scale';
-import { ErrorText } from './styles';
 
 interface Props {
   navigation: NativeStackNavigationProp<AuthStackParams, 'Login'>;
 }
+
+const RememberMeText = styled(Text)`
+  font-weight: 300;
+  color: ${colors.textBlack};
+`;
 
 export const Login: FC<Props> = ({ navigation }) => {
   const dispatch = useAppDispatch();
@@ -28,17 +35,32 @@ export const Login: FC<Props> = ({ navigation }) => {
     handleSubmit,
     formState: { errors },
     getValues,
-  } = useForm<ILoginFormData>();
+    setError,
+  } = useForm<ILoginFormData>({ defaultValues: { rememberMe: false } });
+
+  const { mutate } = useLoginMutation({
+    onSuccess: ({ login }) => {
+      dispatch(setIsLoggedIn());
+      dispatch(setToken({ accessToken: login.accessToken, refreshToken: login.refreshToken }));
+      dispatch(setUser(login.user));
+      navigate('Tab', { screen: 'Home' });
+    },
+    onError: (err: any) => {
+      setError(err[0].includes('email') ? 'email' : 'password', { message: err[0] });
+    },
+  });
 
   const onForgot = useCallback(
     () => navigation.navigate('ForgotPassword', { email: getValues().email }),
     [getValues, navigation],
   );
   const onSignUp = useCallback(() => navigation.navigate('SignUp'), [navigation]);
-  const onSubmit: SubmitHandler<ILoginFormData> = useCallback(() => {
-    dispatch(setIsLoggedIn());
-    navigate('Tab', { screen: 'Home' });
-  }, [dispatch, navigate]);
+  const onSubmit: SubmitHandler<ILoginFormData> = useCallback(
+    data => {
+      mutate({ args: { ...data } });
+    },
+    [mutate],
+  );
 
   return (
     <AuthScreen
@@ -57,7 +79,7 @@ export const Login: FC<Props> = ({ navigation }) => {
         name="email"
         control={control}
         rules={{
-          required: t('common.requiredMessage'),
+          required: `${t('common.email')} ${t('common.requiredMessage')}`,
           pattern: {
             value: EMAIL_REG_EXP,
             message: t('auth.emailErrorMessage'),
@@ -77,7 +99,7 @@ export const Login: FC<Props> = ({ navigation }) => {
         name="password"
         control={control}
         rules={{
-          required: t('common.requiredMessage'),
+          required: `${t('common.password')} ${t('common.requiredMessage')}`,
         }}
         render={({ field: { onChange, value } }) => (
           <TextInput
@@ -88,6 +110,15 @@ export const Login: FC<Props> = ({ navigation }) => {
             secureTextEntry={true}
             hasError={!!errors.password?.message}
           />
+        )}
+      />
+      <Controller
+        name="rememberMe"
+        control={control}
+        render={({ field: { onChange, value } }) => (
+          <Checkbox checked={value} onCheck={onChange}>
+            <RememberMeText fontSize={14}> {t('auth.rememberMe')}</RememberMeText>
+          </Checkbox>
         )}
       />
     </AuthScreen>

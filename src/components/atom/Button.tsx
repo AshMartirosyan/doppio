@@ -1,9 +1,9 @@
-import React, {FC, memo} from 'react';
-import {StyleProp, TextStyle, TouchableOpacity, ViewStyle} from 'react-native';
+import React, { FC, memo } from 'react';
+import { StyleProp, TextStyle, TouchableOpacity, ViewStyle } from 'react-native';
 import styled from 'styled-components';
-import colors from '../../constants/colors';
-import {horizontalScale, moderateScale, verticalScale} from '../../util/scale';
 import Text from './Text';
+import colors from '../../constants/colors';
+import { horizontalScale, moderateScale, verticalScale } from '../../util/scale';
 
 type ButtonType = 'positive' | 'negative';
 
@@ -16,23 +16,17 @@ const BaseComponent = styled(TouchableOpacity)<{
   align-items: center;
   padding-vertical: ${verticalScale(11)}px;
   padding-horizontal: ${horizontalScale(57)}px;
-  background-color: ${({disabled, buttonType}) =>
-    buttonType === 'negative'
-      ? colors.white
-      : disabled
-      ? colors.greenOpacity
-      : colors.greenDark};
-  border-width: ${({buttonType}) => (buttonType === 'negative' ? 1 : 0)}px;
-  border-color: ${({buttonType}) =>
-    buttonType === 'negative' ? colors.greenDark : null}px;
+  background-color: ${({ disabled, buttonType }) =>
+    buttonType === 'negative' ? colors.white : disabled ? colors.greenOpacity : colors.greenDark};
+  border-width: ${({ buttonType }) => (buttonType === 'negative' ? 1 : 0)}px;
+  border-color: ${({ buttonType }) => (buttonType === 'negative' ? colors.greenDark : null)}px;
   border-radius: ${moderateScale(50)}px;
 `;
 
-const Title = styled(Text)<{buttonType?: ButtonType}>`
+const Title = styled(Text)<{ buttonType?: ButtonType }>`
   font-weight: 500;
   text-align: center;
-  color: ${({buttonType}) =>
-    buttonType === 'negative' ? colors.greenDark : colors.white};
+  color: ${({ buttonType }) => (buttonType === 'negative' ? colors.greenDark : colors.white)};
 `;
 
 export interface CustomButton {
@@ -71,8 +65,8 @@ const Button: FC<CustomButton> = ({
         style={[
           textStyle,
           iconPosition === 'left'
-            ? {paddingLeft: horizontalScale(4)}
-            : {paddingRight: horizontalScale(4)},
+            ? { paddingLeft: horizontalScale(4) }
+            : { paddingRight: horizontalScale(4) },
         ]}>
         {text}
       </Title>

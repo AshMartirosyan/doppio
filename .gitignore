@@ -1,6 +1,11 @@
 # OSX
 #
 .DS_Store
+.env
+.env.staging
+.env.production
+.bundle
+.vscode
 
 # Xcode
 #
@@ -62,3 +67,6 @@ buck-out/
 # Ruby / CocoaPods
 /ios/Pods/
 /vendor/bundle/
+
+# GraphQL codegen
+/src/api/query/

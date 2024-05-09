@@ -1,0 +1,24 @@
+overwrite: true
+schema: http://ec2-3-140-199-146.us-east-2.compute.amazonaws.com/graphql
+watch: true
+generates:
+  src/api/query/types.ts:
+    documents: 'src/**/*.graphql'
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+    config:
+      skipTypename: true
+  # ///////////////
+  src/api/query/auth.ts:
+    documents: 'src/query/auth.graphql'
+    plugins:
+      - 'typescript-react-query'
+    config:
+      skipTypename: true
+      fetcher:
+        func: '../axiosHelper#axiosRequest'
+        isReactHook: true
+    preset: import-types-preset
+    presetConfig:
+      typesPath: './types'

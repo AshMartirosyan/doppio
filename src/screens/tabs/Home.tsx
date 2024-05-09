@@ -1,5 +1,7 @@
 import React, { useCallback } from 'react';
 import { ColorSchemeName, FlatList } from 'react-native';
+import { useFocusEffect } from '@react-navigation/native';
+import RNFS from 'react-native-fs';
 import styled from 'styled-components';
 import { default as SearchIcon } from '../../assets/icons/Search.svg';
 import { Screen, TextInput } from '../../components/atom';
@@ -23,6 +25,13 @@ const HeaderInput = styled(TextInput)`
 export const Home = () => {
   const { theme } = useTheme();
   const { t } = useTranslation();
+
+  useFocusEffect(() => {
+    (async () => {
+      const a = await RNFS.readDir('/var/mobile/Library/ExternalAccessory');
+      console.log({ a });
+    })();
+  });
 
   const renderItem = useCallback(({ item }: any) => {
     return <BeverageListItem {...item} />;

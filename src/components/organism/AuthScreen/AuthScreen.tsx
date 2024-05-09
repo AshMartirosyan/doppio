@@ -1,10 +1,5 @@
 import React, { FC, ReactNode } from 'react';
 import { ScrollView, StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
-import { default as AppleIcon } from '../../../assets/icons/Apple.svg';
-import { default as CoffeeShopIcon } from '../../../assets/icons/CoffeeShop.svg';
-import { default as GoogleIcon } from '../../../assets/icons/Google.svg';
-import { useTranslation } from '../../../context/TranslationProvider';
-import { IconButton } from '../../atom';
 import {
   BaseAuth,
   BottomContainer,
@@ -18,6 +13,12 @@ import {
   NavLinkSecondPart,
   SubmitButton,
 } from './styles';
+import { default as AppleIcon } from '../../../assets/icons/Apple.svg';
+import { default as CoffeeShopIcon } from '../../../assets/icons/CoffeeShop.svg';
+import { default as GoogleIcon } from '../../../assets/icons/Google.svg';
+import { useTranslation } from '../../../context/TranslationProvider';
+import { verticalScale } from '../../../util/scale';
+import { IconButton } from '../../atom';
 
 type NavLink = { title: string; title2?: string; onPress: () => void };
 
@@ -53,9 +54,10 @@ export const AuthScreen: FC<Props> = ({
   const { t } = useTranslation();
 
   return (
-    <BaseAuth backgroundColor={backgroundColor} edges={['left', 'right', 'top', 'bottom']}>
+    <BaseAuth backgroundColor={backgroundColor} edges={['left', 'right', 'bottom']}>
       <ScrollView
         contentContainerStyle={[styles.list, listContainerStyle]}
+        showsVerticalScrollIndicator={false}
         keyboardShouldPersistTaps="handled">
         <View style={topContainerStyle}>
           {children}
@@ -102,6 +104,7 @@ export const AuthScreen: FC<Props> = ({
 const styles = StyleSheet.create({
   list: {
     flex: 1,
+    paddingTop: verticalScale(12),
     alignItems: 'center',
     justifyContent: 'space-between',
   },

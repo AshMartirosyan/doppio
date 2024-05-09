@@ -10,7 +10,7 @@ import { ForgotPassword, Login, ResetPassword, SignUp, VerificationCode } from '
 export type AuthStackParams = {
   Login: undefined;
   ForgotPassword: { email?: string };
-  VerificationCode: undefined;
+  VerificationCode: { from?: 'SignUp' | 'ForgotPassword'; email?: string };
   ResetPassword: undefined;
   SignUp: undefined;
 };
@@ -30,6 +30,7 @@ export const AuthNavigator = () => {
           <Header onBack={() => navigation.goBack()} style={{ marginTop: insets.top }} />
         ),
         headerTransparent: true,
+        animation: 'slide_from_right',
       }}>
       <Screen name="Login" component={Login} options={{ headerShown: false }} />
       <Screen name="ForgotPassword" component={ForgotPassword} options={{ headerShown: false }} />

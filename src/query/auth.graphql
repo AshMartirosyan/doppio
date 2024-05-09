@@ -1,0 +1,38 @@
+fragment User on User {
+  id
+  firstName
+  lastName
+  email
+  role
+  profile {
+    lastActivity
+    deviceType
+    isEmailVerified
+  }
+}
+
+mutation signUp($args: RegisterInput!) {
+  register(input: $args) {
+    message
+  }
+}
+
+mutation verifyEmail($args: VerifyEmailInput!) {
+  verifyEmail(input: $args) {
+    refreshToken
+    accessToken
+    user {
+      ...User
+    }
+  }
+}
+
+mutation login($args: LoginInput!) {
+  login(input: $args) {
+    refreshToken
+    accessToken
+    user {
+      ...User
+    }
+  }
+}

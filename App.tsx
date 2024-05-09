@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { LogBox } from 'react-native';
+import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import SplashScreen from 'react-native-splash-screen';
 import { Provider } from 'react-redux';
@@ -7,7 +9,8 @@ import { ThemeProvider } from './src/context/ThemeProvider';
 import { TranslationProvider } from './src/context/TranslationProvider';
 import { AppNavigation } from './src/navigation';
 import { LunchScreen } from './src/screens/LunchScreen';
-import { persistor, store } from './src/store';
+import { queryClient, reactQueryPersister, reduxPersistor, store } from './src/store';
+LogBox.ignoreAllLogs();
 
 const App = () => {
   const [hideSplashScreen, setHideSplashScreen] = useState(false);
@@ -21,12 +24,16 @@ const App = () => {
   ) : (
     <SafeAreaProvider>
       <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <TranslationProvider>
-            <ThemeProvider>
-              <AppNavigation />
-            </ThemeProvider>
-          </TranslationProvider>
+        <PersistGate loading={null} persistor={reduxPersistor}>
+          <PersistQueryClientProvider
+            client={queryClient}
+            persistOptions={{ persister: reactQueryPersister }}>
+            <TranslationProvider>
+              <ThemeProvider>
+                <AppNavigation />
+              </ThemeProvider>
+            </TranslationProvider>
+          </PersistQueryClientProvider>
         </PersistGate>
       </Provider>
     </SafeAreaProvider>

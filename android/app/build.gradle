@@ -1,5 +1,14 @@
 apply plugin: "com.android.application"
 
+project.ext.envConfigFiles = [
+  development: ".env",
+  staging: ".env.staging",
+  production: ".env.production",
+]
+
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+
+
 import com.android.build.OutputFile
 import org.apache.tools.ant.taskdefs.condition.Os
 
@@ -221,6 +230,7 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
+            matchingFallbacks = ['debug', 'release']
         }
         release {
             // Caution! In production, you need to generate your own keystore file.
@@ -228,6 +238,28 @@ android {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+
+    flavorDimensions "default"
+    productFlavors {
+        production {
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationIdSuffix ".app"
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            resValue "string", "app_name", "Doppio"
+        }
+        staging {
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationIdSuffix ".staging"
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            resValue "string", "app_name", "Doppio-Staging"
+        }
+        development {
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationIdSuffix ".dev"
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            resValue "string", "app_name", "Doppio-Dev"
         }
     }
 

@@ -24,6 +24,7 @@ export default {
       authBottomLink1: 'already have an account?',
       authBottomLink2: 'login',
       confirmPassword: 'confirm password',
+      rememberMe: 'remember me?',
     },
     home: {
       searchPlaceholder: 'Search your coffee',
